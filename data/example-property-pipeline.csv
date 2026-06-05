@@ -1,0 +1,4 @@
+status,address,listing_url,strategy,price,taxes,insurance_estimate,hoa,estimated_payment,verified_sources,red_flags,next_action
+new_lead,123 Example St,,classic,450000,,,,,,unknown,Create property intake
+researching,456 Sample Ave,,house_hack,525000,,,,,,taxes unknown,Check county assessor
+needs_review,789 Investor Rd,,creative,300000,,,,,,professional review required,Prepare due diligence worksheet

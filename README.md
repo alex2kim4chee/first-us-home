@@ -29,6 +29,7 @@ The agent is not a lawyer, CPA, mortgage loan officer, realtor, insurance agent,
 ├── curriculum/
 │   └── ru/
 │       ├── course-map.md
+│       ├── learning-experience-model.md
 │       ├── classic-path.md
 │       └── creative-finance-path.md
 ├── workflows/
@@ -38,7 +39,8 @@ The agent is not a lawyer, CPA, mortgage loan officer, realtor, insurance agent,
 │   └── document-preparation-workflow.md
 ├── memory/
 │   ├── memory-schema.yaml
-│   └── progress-tracker.md
+│   ├── progress-tracker.md
+│   └── session-close-protocol.md
 ├── templates/
 │   ├── property-intake.md
 │   ├── lender-comparison.md
@@ -64,4 +66,4 @@ The agent must never fabricate market data, lender rules, property records, tax 
 
 ## Primary entry point
 
-Read `AGENTS.md` first.
+Read `AGENTS.md` first, then `curriculum/ru/learning-experience-model.md` for the required learning and execution formats.

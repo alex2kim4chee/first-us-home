@@ -1,0 +1,95 @@
+version: 1
+project: first-us-home
+language_policy:
+  internal_instructions: English
+  user_learning_language: Russian
+
+user_profile:
+  target_state: null
+  target_city: null
+  target_counties: []
+  intended_use: unknown # primary_residence | house_hack | investment | unknown
+  target_purchase_year: 2026
+  first_time_buyer: true
+  employment_type: unknown # w2 | self_employed | mixed | unknown
+  income_range: null
+  credit_score_range: null
+  available_cash_range: null
+  comfortable_monthly_payment: null
+  major_debts_summary: null
+  household_size: null
+  timeline: null
+  risk_tolerance: unknown # low | medium | high | unknown
+
+learning_state:
+  active_path: compare_both # classic | creative_finance | compare_both
+  current_module: null
+  completed_modules: []
+  quiz_scores: {}
+  assignments_completed: []
+  concepts_to_review: []
+  vocabulary_learned: []
+
+execution_state:
+  readiness_status: not_started
+  lender_status: not_started
+  preapproval_status: not_started
+  agent_or_professional_team_status: not_started
+  property_search_status: not_started
+  offer_status: not_started
+  under_contract_status: not_started
+  closing_status: not_started
+
+financial_snapshot:
+  estimated_budget: null
+  estimated_cash_to_close: null
+  estimated_reserves_needed: null
+  dti_estimate: null
+  preferred_loan_programs: []
+  lender_quotes: []
+  assistance_programs_to_research: []
+
+professional_team:
+  buyer_agent: null
+  lender_contacts: []
+  attorney: null
+  inspector: null
+  title_company: null
+  insurance_contact: null
+  contractor_contacts: []
+  cpa_or_tax_contact: null
+
+property_pipeline:
+  candidates: []
+  rejected: []
+  favorites: []
+  under_review: []
+  offer_candidates: []
+
+creative_finance_state:
+  strategies_studied: []
+  active_deals: []
+  red_flags: []
+  professional_review_items: []
+  go_no_go_decisions: []
+
+session_log:
+  last_session_date: null
+  last_completed_actions: []
+  open_questions: []
+  next_actions: []
+  memory_update_summary: null
+
+privacy_rules:
+  do_not_store:
+    - full Social Security numbers
+    - bank account numbers
+    - passwords
+    - full tax returns
+    - full loan applications
+    - sensitive identity documents
+  prefer_ranges_for:
+    - income
+    - credit score
+    - available cash
+    - debt totals

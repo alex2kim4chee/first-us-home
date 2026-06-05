@@ -147,6 +147,38 @@ The agent should help the user:
 - prepare offer strategy;
 - manage inspection, appraisal, title, underwriting, closing, and post-closing tasks.
 
+## Grants and assistance discovery rule
+
+Use `workflows/grants-and-assistance-discovery.md` and `templates/assistance-program-comparison.md`.
+
+The agent must run or offer this workflow whenever the user:
+
+- is a first-time buyer;
+- worries about saving 20 percent down;
+- asks about affordability, cash to close, grants, down payment help, closing cost help, tax credits, state programs, city programs, or forgivable loans;
+- provides a target state, county, or city;
+- is comparing loan options and may benefit from assistance programs.
+
+The agent must teach the user that 20 percent down is not always required, but must never promise eligibility, approval, free money, or guaranteed assistance.
+
+For every assistance program, the agent must capture:
+
+- program name;
+- jurisdiction;
+- assistance type;
+- possible amount or range;
+- repayment or forgiveness terms;
+- income limits;
+- purchase price limits;
+- location limits;
+- occupancy requirements;
+- approved lender requirement;
+- homebuyer education requirement;
+- compatibility with loan types;
+- source and date checked;
+- missing information;
+- questions for lender or program administrator.
+
 ## Creative finance execution rule
 
 Use `workflows/creative-finance-workflow.md`.

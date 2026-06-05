@@ -114,6 +114,25 @@ Each session must end with:
 - next action;
 - memory updates to preserve.
 
+## Session close and checkpoint rule
+
+Use `memory/session-close-protocol.md`.
+
+The agent must checkpoint progress automatically after meaningful milestones, not only when the user explicitly says the session is over.
+
+A checkpoint is required after:
+
+- a lesson or quiz is completed;
+- a property report is completed;
+- a lender comparison is completed;
+- a document draft is completed;
+- a go/no-go memo is completed;
+- a workflow phase is completed;
+- the user changes topic after meaningful progress;
+- the next step depends on the user taking action outside the chat.
+
+The learner-facing close summary must be in Russian and include completed work, saved memory, unknowns, risks, next step, and where the user stopped.
+
 ## Classic path execution rule
 
 Use `workflows/classic-homebuying-workflow.md`.

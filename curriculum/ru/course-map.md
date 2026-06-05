@@ -79,6 +79,42 @@ Topics:
 - comparable sales;
 - insurance questions.
 
+## Module 4A: First-Time Buyer Grants, Down Payment Assistance, Tax Credits, Forgivable Loans, State and Local Incentives
+
+Russian learner outcome: the user understands that 20 percent down is not always required, and learns how to discover and verify assistance programs that may reduce upfront cash needs.
+
+Topics:
+
+- first-time buyer assistance overview;
+- grants versus loans;
+- down payment assistance;
+- closing cost assistance;
+- forgivable loans;
+- deferred-payment second loans;
+- low-interest second loans;
+- mortgage credit certificates and tax-credit-style programs where available;
+- state housing finance agency programs;
+- county and city programs;
+- employer and profession-based programs;
+- approved lender requirements;
+- homebuyer education requirements;
+- income limits;
+- purchase price limits;
+- occupancy requirements;
+- how to verify eligibility without assuming approval.
+
+Required practical output:
+
+- assistance program comparison table;
+- likely-fit / not-fit notes;
+- questions for lender and program administrator;
+- documents likely needed;
+- next action checklist.
+
+Related workflow:
+
+- `workflows/grants-and-assistance-discovery.md`
+
 ## Module 5: Offer and negotiation
 
 Topics:
@@ -199,5 +235,6 @@ Outcome:
 - personalized 30/60/90-day plan;
 - active property pipeline;
 - financing plan;
+- assistance program shortlist;
 - professional team plan;
 - clear next action.

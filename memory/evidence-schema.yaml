@@ -1,0 +1,59 @@
+version: 1
+schema_id: evidence_record
+purpose: >
+  Structured claim record for any material fact used in education, execution
+  support, property verification, lender comparison, DPA research, or creative
+  finance due diligence.
+
+enums:
+  subject_type:
+    - user_profile
+    - property
+    - lender
+    - assistance_program
+    - creative_finance_case
+    - professional
+    - market_context
+  classification:
+    - verified
+    - listing_claim
+    - estimate
+    - user_provided
+    - unknown
+  source_type:
+    - official
+    - listing
+    - market_data
+    - user_doc
+    - professional_doc
+    - general_web
+    - internal_calculation
+  confidence:
+    - high
+    - medium
+    - low
+
+evidence_record:
+  evidence_id: null
+  subject_type: null
+  subject_id: null
+  field: null
+  value: null
+  units: null
+  classification: unknown
+  source_name: null
+  source_url: null
+  source_type: null
+  source_date: null
+  date_checked: null
+  freshness_days: null
+  stale_after: null
+  confidence: medium
+  captured_by: agent
+  notes: null
+
+rules:
+  - Do not present a material fact as verified unless the source supports it.
+  - If freshness has expired, treat the record as stale until rechecked.
+  - Conflicting evidence must be preserved, not overwritten.
+  - User-provided values remain user_provided until independently verified.

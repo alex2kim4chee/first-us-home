@@ -2,6 +2,17 @@
 
 Draft for educational and organizational purposes only. Physical condition decisions should be reviewed with qualified inspectors and specialists.
 
+## Artifact metadata
+
+| Field | Value |
+|---|---|
+| Artifact ID | |
+| Artifact status | draft / updated / needs_review / final_for_user |
+| Case ID | |
+| Related property ID | |
+| Date updated | |
+| Primary next action | |
+
 ## General inspection questions
 
 - What are the biggest safety issues?
@@ -40,3 +51,7 @@ Draft for educational and organizational purposes only. Physical condition decis
 ## Russian learner explanation
 
 Explain that inspection is not just about finding defects. It is about deciding whether the property still fits the buyer's budget, risk tolerance, and financing plan.
+
+## Operational notes
+
+- Convert major repair findings into risks or negotiation tasks.

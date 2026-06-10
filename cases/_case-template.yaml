@@ -1,0 +1,105 @@
+case_identity:
+  case_id: REPLACE_CASE_ID
+  created_at: REPLACE_DATE
+  updated_at: REPLACE_DATE
+  owner_user_label: null
+  case_status: in_progress
+  active_path: compare_both
+  summary: null
+
+profile:
+  target_state: null
+  target_city: null
+  target_counties: []
+  intended_use: unknown
+  target_purchase_year: 2026
+  first_time_buyer: true
+  employment_type: unknown
+  income_range: null
+  credit_score_range: null
+  available_cash_range: null
+  comfortable_monthly_payment: null
+  major_debts_summary: null
+  household_size: null
+  timeline: null
+  risk_tolerance: unknown
+  preferred_property_types: []
+  constraints_summary: []
+
+learning:
+  current_module: null
+  completed_modules: []
+  assignments_open: []
+  assignments_completed: []
+  quiz_scores: {}
+  concepts_to_review: []
+  vocabulary_learned: []
+  last_lesson_artifact_id: null
+
+execution:
+  readiness_status: not_started
+  lender_status: not_started
+  preapproval_status: not_started
+  property_search_status: not_started
+  property_verification_status: not_started
+  offer_status: not_started
+  under_contract_status: not_started
+  closing_status: not_started
+  post_closing_status: not_started
+  active_strategy_summary: null
+
+financial_snapshot:
+  estimated_budget: null
+  estimated_cash_to_close: null
+  estimated_reserves_needed: null
+  dti_estimate: null
+  preferred_loan_programs: []
+  financing_constraints: []
+  affordability_notes: []
+
+professionals:
+  buyer_agent: null
+  lender_contacts: []
+  attorney: null
+  inspector: null
+  title_company: null
+  insurance_contact: null
+  contractor_contacts: []
+  cpa_or_tax_contact: null
+
+properties:
+  active_property_id: null
+  cases: []
+
+lenders:
+  active_lender_comparison_id: null
+  quotes: []
+
+assistance_programs:
+  shortlist_id: null
+  programs: []
+
+creative_finance_cases:
+  active_case_id: null
+  cases: []
+
+artifacts:
+  registry: []
+
+risks:
+  active: []
+  resolved: []
+
+tasks:
+  primary_next_action: null
+  secondary_actions: []
+  backlog: []
+
+session:
+  last_session_date: null
+  last_checkpoint_type: null
+  last_completed_actions: []
+  open_questions: []
+  stale_items: []
+  next_actions: []
+  memory_update_summary: null

@@ -4,6 +4,41 @@
 
 Guide a first-time buyer through the standard U.S. home purchase process while teaching the user in Russian and turning each lesson into practical work.
 
+## Operational binding
+
+This workflow must update the canonical case state in `memory/client-case-schema.yaml`.
+
+Primary sections touched by this workflow:
+
+- `profile`
+- `learning`
+- `execution`
+- `financial_snapshot`
+- `professionals`
+- `properties`
+- `lenders`
+- `assistance_programs`
+- `artifacts`
+- `tasks`
+- `session`
+
+Typical artifacts created or updated:
+
+- buyer readiness profile
+- lender comparison
+- assistance program comparison
+- property intake
+- offer preparation memo
+
+Typical checkpoints:
+
+- `buyer_intake_updated`
+- `lesson_done`
+- `lender_compare_updated`
+- `property_review_done`
+- `artifact_updated`
+- `waiting_on_user`
+
 ## Phase 0: Buyer intake
 
 Collect a safe summary of:
@@ -26,6 +61,13 @@ Output:
 - missing information list;
 - first 30-day plan.
 
+State updates:
+
+- update `profile`;
+- set `execution.readiness_status` to `in_progress`;
+- create or update a buyer profile artifact;
+- open tasks for missing intake items.
+
 ## Phase 1: Financial readiness
 
 Teach in Russian:
@@ -47,6 +89,13 @@ Implementation support:
 - identify likely loan categories;
 - identify state and local assistance programs;
 - prepare questions for lenders.
+
+State updates:
+
+- update `financial_snapshot`;
+- create evidence-backed affordability assumptions where possible;
+- open lender research tasks;
+- open assistance-program research tasks if affordability is a concern.
 
 ## Phase 2: Lender comparison
 
@@ -72,6 +121,13 @@ Output:
 - questions to ask each lender;
 - Russian explanation of the tradeoffs.
 
+State updates:
+
+- update `lenders.quotes`;
+- attach evidence records to quote fields when sourced;
+- mark stale lender quotes for recheck;
+- set one primary next action tied to the best unresolved comparison step.
+
 ## Phase 3: Homebuying team
 
 Help the user understand and interview:
@@ -88,6 +144,12 @@ Output:
 - interview questions;
 - professional contact tracker;
 - role explanations in Russian.
+
+State updates:
+
+- update `professionals`;
+- open `waiting_user` or `follow_up` tasks for outreach;
+- capture missing professional-review dependencies for active properties or offers.
 
 ## Phase 4: Property search
 
@@ -111,6 +173,13 @@ Capture:
 - open questions.
 
 Use browser tools to verify current and local facts when available.
+
+State updates:
+
+- create or update a `properties.cases[]` record for each candidate;
+- classify facts as verified, listing claim, estimate, or unknown;
+- create evidence records for taxes, ownership, price history, and other material facts;
+- create a property artifact instead of rewriting the case from scratch.
 
 ## Phase 5: Offer preparation
 

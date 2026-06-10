@@ -1,0 +1,284 @@
+version: 1
+schema_id: client_case
+project: first-us-home
+purpose: >
+  Canonical operational state for one real user case. This is the primary
+  runtime object the agent must load, update, checkpoint, and resume.
+
+global_rules:
+  one_case_one_state_object: true
+  progress_tracker_is_derived_view: true
+  store_safe_summaries_only: true
+  do_not_store_raw_sensitive_documents: true
+  use_evidence_records_for_material_facts: true
+  use_tasks_for_pending_work: true
+  require_next_action_after_each_checkpoint: true
+
+enums:
+  path:
+    - classic
+    - creative_finance
+    - compare_both
+  status:
+    - open
+    - not_started
+    - in_progress
+    - waiting_user
+    - waiting_external
+    - needs_review
+    - blocked
+    - done
+    - paused
+  property_stage:
+    - new_lead
+    - intake_started
+    - verifying
+    - under_review
+    - needs_professional_review
+    - ready_for_offer_prep
+    - offer_submitted
+    - under_contract
+    - rejected
+    - paused
+    - closed
+    - no_go
+  artifact_status:
+    - draft
+    - updated
+    - needs_review
+    - final_for_user
+  risk_level:
+    - low
+    - medium
+    - high
+    - critical
+
+case_identity:
+  case_id: null
+  created_at: null
+  updated_at: null
+  owner_user_label: null
+  case_status: in_progress
+  active_path: compare_both
+  summary: null
+
+profile:
+  target_state: null
+  target_city: null
+  target_counties: []
+  intended_use: unknown
+  target_purchase_year: 2026
+  first_time_buyer: true
+  employment_type: unknown
+  income_range: null
+  credit_score_range: null
+  available_cash_range: null
+  comfortable_monthly_payment: null
+  major_debts_summary: null
+  household_size: null
+  timeline: null
+  risk_tolerance: unknown
+  preferred_property_types: []
+  constraints_summary: []
+
+learning:
+  current_module: null
+  completed_modules: []
+  assignments_open: []
+  assignments_completed: []
+  quiz_scores: {}
+  concepts_to_review: []
+  vocabulary_learned: []
+  last_lesson_artifact_id: null
+
+execution:
+  readiness_status: not_started
+  lender_status: not_started
+  preapproval_status: not_started
+  property_search_status: not_started
+  property_verification_status: not_started
+  offer_status: not_started
+  under_contract_status: not_started
+  closing_status: not_started
+  post_closing_status: not_started
+  active_strategy_summary: null
+
+financial_snapshot:
+  estimated_budget: null
+  estimated_cash_to_close: null
+  estimated_reserves_needed: null
+  dti_estimate: null
+  preferred_loan_programs: []
+  financing_constraints: []
+  affordability_notes: []
+
+professionals:
+  buyer_agent: null
+  lender_contacts: []
+  attorney: null
+  inspector: null
+  title_company: null
+  insurance_contact: null
+  contractor_contacts: []
+  cpa_or_tax_contact: null
+
+properties:
+  active_property_id: null
+  cases:
+    - property_id: null
+      address: null
+      listing_url: null
+      strategy: null
+      stage: new_lead
+      last_reviewed_at: null
+      stale_after: null
+      summary: null
+      verified_facts: []
+      listing_claims: []
+      estimates: []
+      unknowns: []
+      red_flags: []
+      professional_reviews_needed: []
+      financing_fit: null
+      creative_finance_fit: null
+      rent_estimate_range: null
+      comps_summary: null
+      artifact_ids: []
+      task_ids: []
+
+lenders:
+  active_lender_comparison_id: null
+  quotes:
+    - lender_id: null
+      lender_name: null
+      program_name: null
+      rate: null
+      apr: null
+      points: null
+      lender_fees: null
+      monthly_payment_estimate: null
+      cash_to_close_estimate: null
+      mortgage_insurance: null
+      lock_period: null
+      status: not_started
+      date_checked: null
+      stale_after: null
+      open_questions: []
+      artifact_ids: []
+      task_ids: []
+
+assistance_programs:
+  shortlist_id: null
+  programs:
+    - program_id: null
+      program_name: null
+      jurisdiction: null
+      assistance_type: null
+      amount_range: null
+      repayment_terms: null
+      forgiveness_terms: null
+      income_limits: null
+      purchase_price_limits: null
+      occupancy_rules: null
+      approved_lender_required: null
+      education_required: null
+      compatible_loan_types: []
+      status: not_started
+      date_checked: null
+      stale_after: null
+      likely_fit_notes: []
+      missing_information: []
+      open_questions: []
+      artifact_ids: []
+      task_ids: []
+
+creative_finance_cases:
+  active_case_id: null
+  cases:
+    - cf_case_id: null
+      strategy_type: null
+      related_property_id: null
+      status: not_started
+      money_flow_summary: null
+      title_risk_summary: null
+      debt_risk_summary: null
+      insurance_risk_summary: null
+      exit_strategy: null
+      default_scenario: null
+      professional_reviews_needed: []
+      red_flags: []
+      go_no_go_status: null
+      artifact_ids: []
+      task_ids: []
+
+artifacts:
+  registry:
+    - artifact_id: null
+      type: null
+      title: null
+      status: draft
+      related_subjects: []
+      source_ids: []
+      version: 1
+      last_updated: null
+      summary: null
+
+risks:
+  active:
+    - risk_id: null
+      category: null
+      severity: medium
+      related_subjects: []
+      summary: null
+      mitigation: null
+      status: open
+  resolved: []
+
+tasks:
+  primary_next_action: null
+  secondary_actions: []
+  backlog:
+    - task_id: null
+      type: null
+      status: open
+      priority: medium
+      related_subjects: []
+      depends_on: []
+      due_date: null
+      done_definition: null
+      owner: agent
+      notes: null
+
+session:
+  last_session_date: null
+  last_checkpoint_type: null
+  last_completed_actions: []
+  open_questions: []
+  stale_items: []
+  next_actions: []
+  memory_update_summary: null
+
+privacy_rules:
+  do_not_store:
+    - full Social Security numbers
+    - bank account numbers
+    - passwords
+    - full tax returns
+    - full loan applications
+    - sensitive identity documents
+  prefer_ranges_for:
+    - income
+    - credit score
+    - available cash
+    - debt totals
+
+done_definition:
+  case_is_operational_when:
+    - profile has enough detail to select a path
+    - active tasks exist for unresolved work
+    - material facts are linked to evidence or marked unknown
+    - at least one next action is defined
+  case_is_stable_for_long_running_use_when:
+    - checkpoints are created after milestones
+    - stale items can be identified
+    - artifacts are versioned instead of recreated

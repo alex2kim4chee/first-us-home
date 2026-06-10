@@ -8,6 +8,28 @@ This workflow is part of the classic path, but it may also support house hacking
 
 The learner-facing explanation must be in Russian.
 
+## Operational binding
+
+This workflow must update:
+
+- `assistance_programs.programs`
+- `financial_snapshot`
+- `lenders`
+- `artifacts`
+- `tasks`
+- `session`
+
+Typical artifact:
+
+- assistance program comparison table
+
+Typical checkpoints:
+
+- `dpa_shortlist_updated`
+- `artifact_updated`
+- `waiting_on_user`
+- `waiting_on_professional`
+
 ## Core learner promise
 
 Many first-time buyers assume they must save 20 percent before buying a home. The agent must teach that this is often not the only path, but it must avoid promising eligibility, approval, or free money.
@@ -51,6 +73,11 @@ Collect safe summaries only:
 - whether the user already has a lender.
 
 Do not request sensitive documents unless the user is preparing for a professional application. Do not store sensitive raw documents.
+
+State updates:
+
+- write user fit assumptions into the case as safe summaries only;
+- create tasks for missing eligibility inputs such as county, household size, or target price.
 
 ## Program categories to research
 
@@ -118,6 +145,11 @@ Priority order:
 5. Approved lender list or lender-published program sheet.
 6. Reputable nonprofit housing counseling agency.
 7. General articles only for discovery, not final eligibility.
+
+Operational rule:
+
+- every material program field must be stored as evidence with source, date checked, and freshness;
+- expired program checks should become stale and trigger re-verification before the agent relies on them.
 
 ## What to capture for each program
 

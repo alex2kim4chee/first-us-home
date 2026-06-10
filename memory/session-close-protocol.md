@@ -6,6 +6,16 @@ The autonomous agent must not lose learning or execution progress when a convers
 
 The agent should treat every meaningful interaction as a session that may need a closing checkpoint.
 
+Use `memory/client-case-schema.yaml` as the checkpoint payload and `docs/architecture/checkpoint-resume.md` as the lifecycle reference.
+
+Regenerate the thin operator view in `memory/operator-view-schema.yaml` after each substantial checkpoint.
+
+For live case management on disk, store:
+
+- the canonical state in `cases/<case-id>/client-case.yaml`;
+- the derived cockpit in `cases/<case-id>/operator-view.yaml`;
+- immutable checkpoints in `checkpoints/<case-id>/...`.
+
 ## What counts as a session
 
 A session is a block of interaction where the user works on one or more of these areas:
@@ -81,6 +91,15 @@ Save only safe summaries:
 - next actions;
 - professional reviews needed.
 
+Also preserve:
+
+- primary next action;
+- secondary next actions when needed;
+- stale items that require re-verification;
+- task status changes;
+- artifact updates or new versions.
+- operator summary changes if the primary next action or blockers changed.
+
 Do not save sensitive raw data such as full SSNs, passwords, bank account numbers, tax returns, full loan applications, or identity documents.
 
 ## Session close output format
@@ -115,6 +134,8 @@ The learner-facing output must be in Russian:
 
 Internally update memory using `memory/memory-schema.yaml`.
 
+Operationally update the canonical case using `memory/client-case-schema.yaml`.
+
 Recommended structure:
 
 ```yaml
@@ -139,16 +160,21 @@ Update `memory/progress-tracker.md` conceptually after each checkpoint:
 - set blocked items to `blocked`;
 - add evidence and next action.
 
+If the active next action changed, record why.
+
 ## If memory tools are unavailable
 
 If persistent memory is unavailable, the agent must include a portable memory block at the end of the response so the next session can resume from it.
 
 ```yaml
 PORTABLE_SESSION_MEMORY:
+  case_id: ...
   current_module: ...
+  active_subjects: []
   completed: []
   open_questions: []
   next_actions: []
+  stale_items: []
   property_pipeline_updates: []
   risks: []
 ```

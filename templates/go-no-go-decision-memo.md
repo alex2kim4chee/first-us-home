@@ -2,6 +2,17 @@
 
 Draft for educational and organizational purposes only. Review transaction decisions with qualified professionals before action.
 
+## Artifact metadata
+
+| Field | Value |
+|---|---|
+| Artifact ID | |
+| Artifact status | draft / updated / needs_review / final_for_user |
+| Case ID | |
+| Related subjects | |
+| Date updated | |
+| Primary next action | |
+
 ## Decision summary
 
 | Field | Value |
@@ -88,3 +99,8 @@ Choose one:
 ## Russian learner explanation
 
 Explain the decision to the user in Russian in practical, plain language.
+
+## Operational notes
+
+- Record whether any material fact is stale.
+- If the decision is blocked, create or reference the blocking task.

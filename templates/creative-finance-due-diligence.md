@@ -2,6 +2,18 @@
 
 Draft for educational and organizational purposes only. Any transaction document or payment decision must be reviewed by the appropriate licensed professional.
 
+## Artifact metadata
+
+| Field | Value |
+|---|---|
+| Artifact ID | |
+| Artifact status | draft / updated / needs_review / final_for_user |
+| Case ID | |
+| Creative finance case ID | |
+| Related property ID | |
+| Date updated | |
+| Primary next action | |
+
 ## Opportunity summary
 
 | Field | Value |
@@ -72,3 +84,8 @@ Draft for educational and organizational purposes only. Any transaction document
 ## Russian learner summary
 
 Use Russian to explain the opportunity, the missing information, the main risk, and the next step.
+
+## Operational notes
+
+- Separate seller claims from verified facts.
+- Link every blocking unknown to a task or professional review item.

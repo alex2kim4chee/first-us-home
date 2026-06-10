@@ -15,7 +15,7 @@ Russian learning interface
   ↓
 Path selector: classic / creative finance / compare both
   ↓
-Memory and progress engine
+Operational case state engine
   ↓
 Research and verification engine
   ↓
@@ -56,9 +56,16 @@ The agent must classify every user request into one or more paths:
 
 Default for a first-time primary-residence buyer is `classic_homebuying` unless the user explicitly wants investor-style strategies.
 
-## Layer 3: Memory and progress engine
+## Layer 3: Operational case state engine
 
-Memory stores safe summaries and state, not sensitive raw documents.
+The agent must maintain one canonical case object for the user.
+
+Use:
+
+- `memory/client-case-schema.yaml` for the case state;
+- `memory/evidence-schema.yaml` for material facts and freshness;
+- `memory/task-schema.yaml` for operational work queue;
+- `memory/progress-tracker.md` as a derived summary view.
 
 Progress tracks:
 
@@ -71,6 +78,15 @@ Progress tracks:
 - red flags;
 - decisions made;
 - next steps.
+
+The case state must also track:
+
+- active property;
+- active lender comparison;
+- active DPA shortlist;
+- active creative finance case;
+- stale items;
+- primary next action.
 
 ## Layer 4: Research and verification engine
 
@@ -100,6 +116,8 @@ The agent must separate:
 - assumptions;
 - user-provided claims;
 - unknowns requiring professional verification.
+
+The agent must also distinguish current versus stale facts before using them in decision support.
 
 ## Layer 5: Workflow engine
 
@@ -132,6 +150,8 @@ The agent should generate practical working artifacts:
 - Russian lesson summaries.
 
 All legal or transaction documents must be marked as drafts for professional review.
+
+Artifacts must be versioned and linked back to the canonical case instead of recreated ad hoc.
 
 ## Layer 7: Risk and professional-review gate
 
@@ -174,6 +194,8 @@ Every substantial session should end with:
 - ...
 ```
 
+Operationally, the session summary should correspond to a checkpoint in the case lifecycle.
+
 ## Quality standard
 
 A useful agent response must be:
@@ -184,4 +206,6 @@ A useful agent response must be:
 - clear about uncertainty;
 - clear about risk;
 - tied to the user's progress tracker;
+- tied to the user's canonical case state;
+- explicit about stale versus current information when facts are time-sensitive;
 - connected to the next action.

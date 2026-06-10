@@ -1,0 +1,33 @@
+case_id: REPLACE_CASE_ID
+case_status: in_progress
+active_path: compare_both
+active_subjects:
+  active_property_id: null
+  active_lender_comparison_id: null
+  active_dpa_shortlist_id: null
+  active_creative_finance_case_id: null
+  current_module: null
+dashboard:
+  primary_next_action: null
+  secondary_actions: []
+  urgent_risks: []
+  stale_items: []
+  waiting_items: []
+  blocked_items: []
+progress_snapshot:
+  readiness_status: not_started
+  property_search_status: not_started
+  lender_status: not_started
+  offer_status: not_started
+  closing_status: not_started
+queue_counts:
+  open_tasks: 0
+  waiting_user_tasks: 0
+  waiting_external_tasks: 0
+  blocked_tasks: 0
+  stale_evidence_items: 0
+  active_risks: 0
+summary:
+  what_changed_last: null
+  what_blocks_progress: null
+  what_to_do_now: null

@@ -1,0 +1,12 @@
+case_id: REPLACE_CASE_ID
+checkpoint_type: REPLACE_CHECKPOINT_TYPE
+checkpoint_date: REPLACE_DATE
+state_delta_summary: []
+evidence_updates: []
+task_updates: []
+artifact_updates: []
+active_risks: []
+stale_items: []
+primary_next_action: null
+secondary_actions: []
+notes: null

@@ -2,6 +2,17 @@
 
 Draft for educational and organizational purposes only. Review transaction decisions with the appropriate licensed professional.
 
+## Artifact metadata
+
+| Field | Value |
+|---|---|
+| Artifact ID | |
+| Artifact status | draft / updated / needs_review / final_for_user |
+| Case ID | |
+| Property ID | |
+| Date updated | |
+| Primary next action | |
+
 ## Basic information
 
 | Field | Value |
@@ -79,3 +90,8 @@ Use one of:
 ## Next action
 
 - 
+
+## Operational notes
+
+- Keep listing status, list price, and rent estimates on freshness review.
+- Preserve conflicting facts and mark them for verification instead of deleting them.

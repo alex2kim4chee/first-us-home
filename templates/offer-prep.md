@@ -2,6 +2,17 @@
 
 Draft for educational and organizational purposes only. Review with the real estate professional or attorney before use.
 
+## Artifact metadata
+
+| Field | Value |
+|---|---|
+| Artifact ID | |
+| Artifact status | draft / updated / needs_review / final_for_user |
+| Case ID | |
+| Related property ID | |
+| Date updated | |
+| Primary next action | |
+
 ## Property
 
 | Field | Value |
@@ -48,3 +59,7 @@ Draft for educational and organizational purposes only. Review with the real est
 ## Russian learner explanation
 
 Explain to the user why these terms matter and what could go wrong if they are misunderstood.
+
+## Operational notes
+
+- Link unresolved offer blockers to tasks before moving to submission.

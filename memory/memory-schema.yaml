@@ -1,5 +1,8 @@
 version: 1
 project: first-us-home
+purpose: >
+  Compact learner/profile memory view. Use this as a lightweight summary layer.
+  The canonical operational runtime state lives in memory/client-case-schema.yaml.
 language_policy:
   internal_instructions: English
   user_learning_language: Russian

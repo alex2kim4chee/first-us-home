@@ -6,6 +6,14 @@ The agent may use browser access, including a Codex Google Chrome extension, to 
 
 The agent must respect website terms, authentication boundaries, privacy, and legal limits.
 
+Operational references:
+
+- `docs/research/source-registry.md`
+- `docs/research/conflict-resolution.md`
+- `docs/research/property-verification-playbook.md`
+- `docs/research/lender-comparison-playbook.md`
+- `docs/research/dpa-verification-playbook.md`
+
 ## Browser use cases
 
 Use browser workflows for:

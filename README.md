@@ -21,33 +21,80 @@ The agent is not a lawyer, CPA, mortgage loan officer, realtor, insurance agent,
 ├── README.md
 ├── docs/
 │   ├── architecture/
-│   │   └── agent-operating-system.md
+│   │   ├── agent-operating-system.md
+│   │   ├── artifact-lifecycle.md
+│   │   ├── checkpoint-resume.md
+│   │   ├── context-loading-policy.md
+│   │   ├── freshness-policy.md
+│   │   ├── operator-layer.md
+│   │   └── operational-state-model.md
+│   ├── quality/
+│   │   ├── evaluation-framework.md
+│   │   └── failure-modes.md
+│   ├── research/
+│   │   ├── conflict-resolution.md
+│   │   ├── dpa-verification-playbook.md
+│   │   ├── lender-comparison-playbook.md
+│   │   ├── property-verification-playbook.md
+│   │   └── source-registry.md
 │   ├── safety/
 │   │   └── legal-ethical-guardrails.md
 │   └── tools/
 │       └── browser-and-platform-integrations.md
+├── evals/
+│   ├── cases/
+│   ├── README.md
+│   ├── regression-checklist.md
+│   └── scenario-matrix.md
 ├── curriculum/
 │   └── ru/
 │       ├── course-map.md
 │       ├── learning-experience-model.md
 │       ├── classic-path.md
 │       └── creative-finance-path.md
+├── cases/
+│   ├── _case-template.yaml
+│   ├── _operator-view-template.yaml
+│   └── <case-id>/
+├── artifacts/
+│   ├── _artifact-manifest-template.yaml
+│   └── <case-id>/
+├── checkpoints/
+│   ├── _checkpoint-template.yaml
+│   └── <case-id>/
+├── scripts/
+│   ├── create_checkpoint.py
+│   ├── run_evals.py
+│   ├── register_artifact.py
+│   ├── scaffold_case.py
+│   ├── update_client_case.py
+│   ├── update_operator_view.py
+│   ├── create-checkpoint.sh
+│   ├── register-artifact.sh
+│   ├── scaffold-case.sh
+│   ├── update-client-case.sh
+│   └── update-operator-view.sh
 ├── workflows/
 │   ├── classic-homebuying-workflow.md
 │   ├── creative-finance-workflow.md
 │   ├── property-search-and-verification.md
 │   └── document-preparation-workflow.md
 ├── memory/
+│   ├── client-case-schema.yaml
+│   ├── evidence-schema.yaml
 │   ├── memory-schema.yaml
+│   ├── operator-view-schema.yaml
 │   ├── progress-tracker.md
-│   └── session-close-protocol.md
+│   ├── session-close-protocol.md
+│   └── task-schema.yaml
 ├── templates/
 │   ├── property-intake.md
 │   ├── lender-comparison.md
 │   ├── offer-prep.md
 │   ├── inspection-questions.md
 │   ├── creative-finance-due-diligence.md
-│   └── go-no-go-decision-memo.md
+│   ├── go-no-go-decision-memo.md
+│   └── operator-case-snapshot.md
 └── data/
     └── example-property-pipeline.csv
 ```
@@ -64,6 +111,42 @@ The agent may use browser access through Codex and a Google Chrome extension whe
 
 The agent must never fabricate market data, lender rules, property records, tax data, HOA facts, loan eligibility, permits, title status, or legal conclusions. If current verification is required, it must use a browser/search tool or tell the user exactly what must be verified with a professional.
 
+Operationally, the repository now treats each user as a long-running case with:
+
+- canonical state;
+- evidence records with freshness;
+- task queue;
+- versioned artifacts;
+- thin operator cockpit;
+- checkpoint/resume lifecycle.
+
+Runtime-wise, the repository now also includes a file-based layout for:
+
+- active cases;
+- operator views;
+- artifact manifests;
+- immutable checkpoints.
+
+Quality-wise, the repository now also includes:
+
+- an evaluation framework;
+- named failure modes;
+- a scenario matrix;
+- regression cases for live buyer-support behavior.
+
+The repository also includes a cross-platform eval runner that turns scenario cases into a structured markdown scoring report.
+
 ## Primary entry point
 
-Read `AGENTS.md` first, then `curriculum/ru/learning-experience-model.md` for the required learning and execution formats.
+Read `AGENTS.md` first, then:
+
+1. `docs/architecture/operational-state-model.md`
+2. `docs/architecture/checkpoint-resume.md`
+3. `docs/architecture/freshness-policy.md`
+4. `docs/architecture/artifact-lifecycle.md`
+5. `docs/architecture/operator-layer.md`
+6. `docs/architecture/context-loading-policy.md`
+7. `docs/quality/evaluation-framework.md`
+8. `docs/research/source-registry.md`
+9. `docs/runtime/file-runtime.md`
+10. `curriculum/ru/learning-experience-model.md`

@@ -4,6 +4,28 @@
 
 Help the user search for real properties, verify available facts, separate assumptions from verified information, and decide whether a property deserves deeper review.
 
+## Operational binding
+
+This workflow must create or update one `properties.cases[]` record per property.
+
+Also update:
+
+- `artifacts`
+- `risks`
+- `tasks`
+- `session`
+
+Typical artifact:
+
+- property intake / property verification report
+
+Typical checkpoints:
+
+- `property_review_done`
+- `artifact_updated`
+- `red_flag_added`
+- `waiting_on_professional`
+
 ## Inputs
 
 - Target area.
@@ -117,6 +139,13 @@ When presenting the report to the user, explain it in Russian and clearly label:
 ## Data quality rule
 
 Do not hide uncertainty. If a source is missing, say what remains unverified.
+
+Operationally:
+
+- store each material fact as an evidence record or mark it unknown;
+- preserve conflicting facts instead of collapsing them;
+- set `stale_after` for dynamic items such as listing status, list price, and rent estimates;
+- create follow-up tasks for title, permit, flood, insurance, or HOA gaps that block a decision.
 
 ## Stop conditions
 

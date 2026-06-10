@@ -1,0 +1,56 @@
+version: 1
+schema_id: task_record
+purpose: >
+  Operational work queue entry for tracking what the agent, the user, or an
+  external professional must do next.
+
+enums:
+  type:
+    - user_action
+    - agent_research
+    - professional_review
+    - follow_up
+    - document_update
+    - verification
+    - comparison
+  status:
+    - open
+    - waiting_user
+    - waiting_external
+    - blocked
+    - done
+  priority:
+    - high
+    - medium
+    - low
+  owner:
+    - agent
+    - user
+    - lender
+    - attorney
+    - title_company
+    - inspector
+    - insurance
+    - other_professional
+
+task_record:
+  task_id: null
+  title: null
+  type: null
+  status: open
+  priority: medium
+  owner: agent
+  related_subjects: []
+  depends_on: []
+  due_date: null
+  created_at: null
+  updated_at: null
+  done_definition: null
+  blocker_reason: null
+  notes: null
+
+rules:
+  - Every active case must have at most one primary next action.
+  - High-priority risk mitigation tasks outrank ordinary workflow tasks.
+  - Waiting items remain visible until converted to done or blocked.
+  - Tasks should reference properties, lenders, programs, or artifacts when possible.

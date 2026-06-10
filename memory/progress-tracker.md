@@ -1,5 +1,15 @@
 # Progress Tracker
 
+This file is the learner-facing and operator-friendly summary view.
+
+The canonical runtime state lives in `memory/client-case-schema.yaml`.
+
+Tasks live in `memory/task-schema.yaml`.
+
+Material facts and freshness metadata live in `memory/evidence-schema.yaml`.
+
+The thin derived operator cockpit lives in `memory/operator-view-schema.yaml`.
+
 ## Status values
 
 - `not_started`
@@ -73,6 +83,13 @@
 ### Memory updates
 - ...
 ```
+
+## Operational summary rules
+
+- Derive this tracker from the canonical case state instead of treating it as a separate source of truth.
+- Reflect blocking stale facts in `Evidence` or `Next action`.
+- Keep one primary next action aligned with the active task queue.
+- Keep the operator view aligned with the same active subject and blockers.
 
 ## Deal status values
 

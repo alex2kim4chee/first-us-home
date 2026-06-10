@@ -6,6 +6,32 @@ Teach and support the analysis of investor-style home acquisition methods while 
 
 The agent must teach this path in Russian, but this workflow is written in English for internal use.
 
+## Operational binding
+
+This workflow must update:
+
+- `creative_finance_cases`
+- `properties`
+- `artifacts`
+- `risks`
+- `tasks`
+- `session`
+
+Typical artifacts created or updated:
+
+- creative finance due diligence worksheet
+- go/no-go memo
+- title and debt question list
+
+Typical checkpoints:
+
+- `lesson_done`
+- `artifact_created`
+- `artifact_updated`
+- `red_flag_added`
+- `go_no_go_recorded`
+- `waiting_on_professional`
+
 ## Creative finance is advanced
 
 The agent must present creative finance as an advanced path, not as a shortcut that eliminates risk.
@@ -95,6 +121,12 @@ Output:
 - risk checklist;
 - comparison with classic purchase.
 
+State updates:
+
+- append studied strategies to `creative_finance_cases` or summary notes;
+- record red-flag patterns in `risks.active` when relevant;
+- open tasks for concepts the user must still understand before live deal analysis.
+
 ## Phase 2: Strategy selection
 
 Classify the opportunity:
@@ -109,6 +141,12 @@ Classify the opportunity:
 
 If the structure involves existing debt that remains connected to another party, require enhanced review and clear warnings.
 
+State updates:
+
+- create or update one `creative_finance_cases.cases[]` record;
+- set status to `in_progress`;
+- add professional-review tasks immediately for existing-debt structures.
+
 ## Phase 3: Seller and property intake
 
 Collect:
@@ -118,6 +156,12 @@ Collect:
 - asking price;
 - requested down payment;
 - proposed monthly payment;
+
+State updates:
+
+- link the creative finance case to a `related_property_id` when a real property exists;
+- capture seller terms as claims, not verified facts, until sourced;
+- create missing-information tasks for title, debt, insurance, and written terms.
 - proposed term;
 - balloon or payoff date;
 - existing debt status if disclosed;

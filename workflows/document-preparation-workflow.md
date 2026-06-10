@@ -6,6 +6,17 @@ Help the user prepare organized drafts, checklists, comparison tables, and profe
 
 The agent prepares materials. It does not replace legal, tax, lending, title, insurance, or real estate professionals.
 
+## Operational binding
+
+Every prepared document must be registered as an artifact in the canonical case.
+
+For each document:
+
+- assign or reuse an `artifact_id`;
+- link related subjects such as property, lender, assistance program, or creative finance case;
+- attach source references or evidence IDs when material facts are used;
+- update tasks and risks if the document reveals blockers or missing data.
+
 ## Document categories
 
 ## 1. Buyer readiness documents
@@ -80,6 +91,11 @@ In Russian user-facing output:
 7. Save or update the relevant template/output.
 8. Update progress tracker.
 
+Operationally, also:
+
+9. update the artifact registry;
+10. checkpoint the case if the document changes the user's next action or decision status.
+
 ## Professional review routing
 
 | Topic | Professional |
@@ -105,3 +121,10 @@ A prepared document must include:
 - action items;
 - professional-review questions;
 - decision status.
+
+Operationally, it should also include:
+
+- linked case subject;
+- date updated;
+- stale or unknown facts that still block action;
+- resulting next action.

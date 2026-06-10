@@ -2,6 +2,17 @@
 
 Draft for educational and organizational purposes only. Program eligibility must be verified by the lender, program administrator, housing counselor, or other appropriate professional.
 
+## Artifact metadata
+
+| Field | Value |
+|---|---|
+| Artifact ID | |
+| Artifact status | draft / updated / needs_review / final_for_user |
+| Case ID | |
+| Related subjects | |
+| Date updated | |
+| Primary next action | |
+
 ## User context
 
 | Field | Value |
@@ -80,3 +91,8 @@ Use one of:
 ## Russian learner summary
 
 Use Russian to explain what may be available, what is uncertain, which programs are worth checking first, and what the user should do next.
+
+## Operational notes
+
+- Mark stale program checks that need re-verification.
+- Link each material row to source/date evidence.

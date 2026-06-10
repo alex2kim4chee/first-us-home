@@ -66,6 +66,14 @@ For every interaction, follow this loop:
 
 The agent may use a browser through Codex, Google Chrome extension, or any available browsing/search tool to interact with public platforms and user-provided websites.
 
+Use:
+
+- `docs/research/source-registry.md`
+- `docs/research/conflict-resolution.md`
+- `docs/research/property-verification-playbook.md`
+- `docs/research/lender-comparison-playbook.md`
+- `docs/research/dpa-verification-playbook.md`
+
 Use browser workflows for:
 
 - listing research;
@@ -96,15 +104,25 @@ When facts matter, use this priority order:
 5. Professional documentation from user-provided lender/realtor/title/attorney.
 6. General web sources only as secondary context.
 
+If sources conflict, preserve the conflict, mark the field unresolved when material, and create a verification or professional-review task instead of flattening the disagreement.
+
 ## Memory rule
 
-Use the schema in `memory/memory-schema.yaml`.
+Use `memory/client-case-schema.yaml` as the canonical runtime state object.
+
+Use `memory/memory-schema.yaml` as the compact learner/profile memory view when a lighter summary is needed.
+
+Use `memory/evidence-schema.yaml` for material facts that need source attribution, confidence, and freshness tracking.
+
+Use `memory/task-schema.yaml` for pending operational work.
+
+Use `docs/runtime/file-runtime.md` for the on-disk case layout.
 
 Do not store full SSNs, bank account numbers, tax returns, passwords, full loan applications, or copies of sensitive documents. Store only safe summaries, ranges, task statuses, and references to user-owned files.
 
 ## Progress rule
 
-Use `memory/progress-tracker.md` as the canonical progress model.
+Use `memory/progress-tracker.md` as the learner-facing progress summary, derived from the canonical case state.
 
 Each session must end with:
 
@@ -117,6 +135,8 @@ Each session must end with:
 ## Session close and checkpoint rule
 
 Use `memory/session-close-protocol.md`.
+
+Use `docs/architecture/checkpoint-resume.md` for the operational lifecycle and required checkpoint events.
 
 The agent must checkpoint progress automatically after meaningful milestones, not only when the user explicitly says the session is over.
 
@@ -132,6 +152,149 @@ A checkpoint is required after:
 - the next step depends on the user taking action outside the chat.
 
 The learner-facing close summary must be in Russian and include completed work, saved memory, unknowns, risks, next step, and where the user stopped.
+
+## Operational state rule
+
+Use `docs/architecture/operational-state-model.md`.
+
+The agent must treat the user as an active case, not as a sequence of isolated messages.
+
+For substantial work, update the canonical case object across:
+
+- profile;
+- learning;
+- execution;
+- properties;
+- lenders;
+- assistance programs;
+- creative finance cases;
+- artifacts;
+- risks;
+- tasks;
+- session state.
+
+The agent must end each substantial session with one primary next action.
+
+## Evidence and freshness rule
+
+Use `docs/architecture/freshness-policy.md`.
+
+The agent must not rely on old dynamic facts as if they are current.
+
+For material facts, track:
+
+- classification: verified, listing claim, estimate, user provided, or unknown;
+- source;
+- date checked;
+- freshness window;
+- confidence;
+- stale status when applicable.
+
+If a stale fact blocks a decision, create a re-verification task before using it for a recommendation.
+
+## Task orchestration rule
+
+Pending work must be tracked as tasks, not only as prose in the latest response.
+
+Each active case should maintain:
+
+- at most one primary next action;
+- up to two secondary actions;
+- visible waiting-on-user and waiting-on-professional items;
+- blocking dependencies for critical decisions.
+
+## Operator layer rule
+
+Use `docs/architecture/operator-layer.md`.
+
+Use `memory/operator-view-schema.yaml` as the thin derived cockpit for active case steering.
+
+Use it to surface:
+
+- active subject;
+- urgent risks;
+- stale items;
+- waiting or blocked items;
+- one primary next action.
+
+Do not use the operator view as a second source of truth. It must be derived from the canonical case state.
+
+## Artifact rule
+
+Practical outputs must be handled as versioned artifacts linked to the case.
+
+Examples:
+
+- buyer profile;
+- property verification report;
+- lender comparison;
+- assistance program comparison;
+- creative finance review;
+- go/no-go memo.
+
+Update existing artifacts when possible instead of recreating them from scratch.
+
+## File runtime rule
+
+Use the repository runtime layout for real working cases:
+
+- `cases/<case-id>/client-case.yaml`
+- `cases/<case-id>/operator-view.yaml`
+- `artifacts/<case-id>/manifest.yaml`
+- `checkpoints/<case-id>/YYYY-MM-DD-<checkpoint-type>.yaml`
+
+When a real case is being actively managed, the agent should prefer updating these runtime files over keeping state only in transient chat output.
+
+## Context loading rule
+
+Use `docs/architecture/context-loading-policy.md`.
+
+The agent must use lazy context loading.
+
+Default hot path:
+
+- `AGENTS.md`
+- active `client-case.yaml`
+- active `operator-view.yaml`
+- `memory/session-close-protocol.md`
+- one current workflow
+
+Warm path:
+
+- one needed template;
+- one needed research playbook;
+- freshness or runtime docs when required.
+
+Cold path:
+
+- evaluation materials;
+- unrelated workflows;
+- unrelated templates;
+- unrelated path-specific materials.
+
+For a normal working turn, avoid loading more than the minimum set needed to produce the next safe, correct action.
+
+## Evaluation and regression rule
+
+Use:
+
+- `docs/quality/evaluation-framework.md`
+- `docs/quality/failure-modes.md`
+- `evals/scenario-matrix.md`
+- `evals/regression-checklist.md`
+
+The agent specification should be judged against scenario-based behavior, not style alone.
+
+Changes to prompts, schemas, workflows, templates, or safety rules should preserve:
+
+- state continuity;
+- evidence discipline;
+- freshness handling;
+- task orchestration;
+- safety and professional-review routing;
+- clear Russian learner communication.
+
+If a change would weaken any of the high-priority regression scenarios, it should be treated as a quality regression even if the wording appears improved.
 
 ## Classic path execution rule
 

@@ -1,0 +1,12 @@
+case_id: REPLACE_CASE_ID
+artifacts:
+  - artifact_id: null
+    type: null
+    title: null
+    status: draft
+    related_subjects: []
+    source_ids: []
+    version: 1
+    last_updated: null
+    file_path: null
+    summary: null

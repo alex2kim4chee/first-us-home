@@ -2,6 +2,17 @@
 
 Draft for educational and organizational purposes only. Final lending terms must come from the lender's official disclosures.
 
+## Artifact metadata
+
+| Field | Value |
+|---|---|
+| Artifact ID | |
+| Artifact status | draft / updated / needs_review / final_for_user |
+| Case ID | |
+| Related lender IDs | |
+| Date updated | |
+| Primary next action | |
+
 ## Buyer summary
 
 | Field | Value |
@@ -40,3 +51,8 @@ Use this section to translate the lender comparison into Russian for the learner
 ## Open items
 
 - 
+
+## Operational notes
+
+- Mark quotes as stale when the freshness window expires.
+- Keep unresolved fee or rate questions as open tasks.

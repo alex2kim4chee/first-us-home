@@ -1,0 +1,54 @@
+version: 1
+schema_id: operator_view
+purpose: >
+  Thin derived control panel for quickly steering an active buyer case. This is
+  not a second source of truth. It is a compact operational view generated from
+  memory/client-case-schema.yaml.
+
+rules:
+  - derive_from_client_case_only: true
+  - do_not_store_new_facts_here: true
+  - prioritize_blockers_over_background_context: true
+  - keep_one_primary_next_action: true
+
+operator_view:
+  case_id: null
+  case_status: null
+  active_path: null
+  active_subjects:
+    active_property_id: null
+    active_lender_comparison_id: null
+    active_dpa_shortlist_id: null
+    active_creative_finance_case_id: null
+    current_module: null
+  dashboard:
+    primary_next_action: null
+    secondary_actions: []
+    urgent_risks: []
+    stale_items: []
+    waiting_items: []
+    blocked_items: []
+  progress_snapshot:
+    readiness_status: null
+    property_search_status: null
+    lender_status: null
+    offer_status: null
+    closing_status: null
+  queue_counts:
+    open_tasks: 0
+    waiting_user_tasks: 0
+    waiting_external_tasks: 0
+    blocked_tasks: 0
+    stale_evidence_items: 0
+    active_risks: 0
+  summary:
+    what_changed_last: null
+    what_blocks_progress: null
+    what_to_do_now: null
+
+done_definition:
+  operator_view_is_useful_when:
+    - the agent can decide what to do next in under one minute
+    - high-severity risks are visible before normal tasks
+    - stale facts that affect decisions are visible
+    - waiting dependencies are visible

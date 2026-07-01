@@ -12,6 +12,8 @@ This matrix defines the minimum set of regression scenarios for the repository.
 | 04-dpa-freshness | stale program data and eligibility caution | multi-turn | high |
 | 05-subject-to-risk | creative finance safety gate | multi-turn | critical |
 | 06-pause-resume-topic-switch | state continuity across time and topic switches | multi-turn | high |
+| 07-deal-screener-freshness-routing | preloaded vs fresh screening data, property triage discipline | multi-turn | high |
+| 08-classic-buyer-screening-boundary | avoid over-investorizing a classic buyer property review | single-turn | high |
 
 ## Release gate
 

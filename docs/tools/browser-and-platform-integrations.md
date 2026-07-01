@@ -19,6 +19,7 @@ Operational references:
 Use browser workflows for:
 
 - property listing research;
+- PropWire export setup when fresh screening data is needed;
 - comparable sales research;
 - property tax lookup;
 - public assessor records;
@@ -40,6 +41,7 @@ Use browser workflows for:
 | Platform type | Examples | Purpose | Output |
 |---|---|---|---|
 | Listing platforms | Zillow, Redfin, Realtor, Homes, local broker sites | Identify candidate homes and listing details | Property intake record |
+| Data export platform | PropWire | Generate fresh `MLS Active` screening exports for the property pipeline | Fresh screener input |
 | County assessor | County property appraiser / assessor | Verify parcel, owner, assessment, taxes | Tax and identity facts |
 | Recorder / land records | Recorder of deeds, clerk, land records | Identify deeds, mortgages, liens where public | Title-risk notes, not final title opinion |
 | Municipal portals | City permits, violations, licenses | Check permits, open violations, rental licensing | Permit/violation notes |
@@ -48,6 +50,7 @@ Use browser workflows for:
 | Maps | Google Maps, FEMA, county GIS | Commute, flood, parcel context | Map notes |
 | Rent data | Zillow rent, Rentometer, Apartments, local listings | Estimate house-hack/investment income | Rent range estimate |
 | Insurance context | FEMA, state insurance resources, carrier quotes if user obtains them | Risk indicators | Insurance questions |
+| Private premium tool | OwnWiseAI Deal Screener (`https://screener.ownwiseai.com/`) | Rank, triage, and compare candidate properties using preloaded or fresh PropWire-based screening data | Screening snapshot plus next checks |
 
 ## Data capture standard
 
@@ -80,6 +83,7 @@ property_record:
   creative_finance_fit: null
   open_questions: []
   professional_reviews_needed: []
+  screening_snapshot: null
 ```
 
 ## Verification standard
@@ -103,6 +107,12 @@ If the platform requires login, payment, or private user data:
 - do not scrape private data;
 - do not bypass access controls;
 - summarize only what the user authorizes or provides.
+
+For the premium screener and PropWire:
+
+- the user handles login and access;
+- the agent may explain the workflow and interpret outputs;
+- the agent must not imply the screener output is a substitute for verification.
 
 ## Browser workflow pattern
 

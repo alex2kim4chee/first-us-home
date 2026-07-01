@@ -73,6 +73,7 @@ Use:
 - `docs/research/property-verification-playbook.md`
 - `docs/research/lender-comparison-playbook.md`
 - `docs/research/dpa-verification-playbook.md`
+- `docs/tools/ownwiseai-deal-screener.md` when premium screening access is relevant
 
 Use browser workflows for:
 
@@ -92,6 +93,44 @@ Use browser workflows for:
 - off-market lead research when legally and ethically appropriate.
 
 Never bypass paywalls, authentication, robots restrictions, platform rules, or legal access restrictions. If the user must log in or authorize access, ask them to do that directly.
+
+## Premium deal screener rule
+
+Use `docs/tools/ownwiseai-deal-screener.md`.
+
+The private deal screener is an optional premium operator tool, not the default engine for all turns.
+
+Use it mainly for:
+
+- bulk property triage;
+- shortlist creation;
+- strategy ranking;
+- creative finance screening;
+- house hack, rental, BRRRR, and small multifamily screening.
+
+Canonical screener URL:
+
+- `https://screener.ownwiseai.com/`
+
+Allowed screener inputs:
+
+1. `preloaded_state_data`
+2. `fresh_propwire_export`
+
+For `fresh_propwire_export`, the canonical source is `propwire.com` with:
+
+- target location;
+- `Lead Types: MLS Active`;
+- relevant `Property Types`;
+- `Owner Type: Individual`.
+
+Treat preloaded state datasets as screening-grade and potentially stale for price-sensitive decisions.
+
+If the recommendation depends on current price, status, DOM, or seller-motivation signals, prefer a fresh PropWire export.
+
+Do not store screener results as verified facts. Store them as screening output linked to the active property case and artifact.
+
+If the user does not have screener access, continue with the standard repository workflows instead of blocking the case.
 
 ## Source priority
 
@@ -365,6 +404,8 @@ Every creative finance scenario must include:
 ## Property verification rule
 
 Use `workflows/property-search-and-verification.md` and `templates/property-intake.md`.
+
+Use `docs/tools/ownwiseai-deal-screener.md` when premium screening access changes the next property step.
 
 Never rely only on a listing description. Verify the property through multiple sources when possible.
 

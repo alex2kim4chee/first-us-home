@@ -1,0 +1,6 @@
+# Ignore the landing page website directory as it should not be committed to Git
+landing/
+.local-guides/
+node_modules/
+dist/
+.DS_Store

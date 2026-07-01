@@ -143,6 +143,20 @@ properties:
       creative_finance_fit: null
       rent_estimate_range: null
       comps_summary: null
+      screening_snapshot:
+        tool_name: ownwiseai_deal_screener
+        source_mode: null
+        source_label: null
+        source_checked_at: null
+        stale_after: null
+        primary_strategy: null
+        secondary_strategy: null
+        deal_status: null
+        confidence_score: null
+        risk_band: null
+        suggested_offer_range: null
+        seller_angle: null
+        required_manual_checks: []
       artifact_ids: []
       task_ids: []
 

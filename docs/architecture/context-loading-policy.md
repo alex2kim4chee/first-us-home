@@ -41,6 +41,7 @@ Load only when the current task explicitly requires it:
 
 - one relevant template
 - one relevant research playbook
+- `docs/tools/ownwiseai-deal-screener.md`
 - `docs/architecture/freshness-policy.md`
 - `docs/architecture/operator-layer.md`
 - `docs/runtime/file-runtime.md`
@@ -49,6 +50,7 @@ Typical triggers:
 
 - preparing or updating a specific artifact;
 - verifying live facts;
+- using the premium deal screener or interpreting its output;
 - resolving stale data;
 - creating or updating runtime files.
 
@@ -106,6 +108,11 @@ Load the matching playbook only when the task involves live verification:
 - property verification -> `property-verification-playbook.md`
 - lender comparison -> `lender-comparison-playbook.md`
 - DPA research -> `dpa-verification-playbook.md`
+
+Load `docs/tools/ownwiseai-deal-screener.md` only when:
+
+- the user has access to the private screener; and
+- screening output would change the immediate property next action.
 
 Do not load all research docs together unless the user is explicitly asking for repository-level design work.
 

@@ -83,6 +83,29 @@ Use one of:
 | Creative finance | unknown | |
 | Flip / rehab | unknown | |
 
+## Screening snapshot
+
+Use this section only if the premium deal screener was used.
+
+| Field | Value |
+|---|---|
+| Screening source | preloaded_state_data / fresh_propwire_export |
+| Dataset / scope | |
+| Source checked date | |
+| Primary strategy | |
+| Secondary strategy | |
+| Deal status | pursue / conditional / pass |
+| Confidence score | |
+| Risk band | low / moderate / high |
+| Suggested offer band | |
+| Seller angle | |
+
+### Required manual checks from screener
+
+- 
+
+Note: screener outputs are screening guidance, not verified facts.
+
 ## Open questions
 
 - 

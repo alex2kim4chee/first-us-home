@@ -35,6 +35,9 @@ Typical checkpoints:
 - Financing path.
 - User constraints.
 - Property URL or address.
+- Optional screener input when available:
+  - `preloaded_state_data`; or
+  - `fresh_propwire_export`.
 
 ## Search sources
 
@@ -52,6 +55,36 @@ Recommended source order:
 8. Comparable sales sources.
 9. Rental listing sources if house hacking or investment is relevant.
 10. Insurance and climate-risk context sources when available.
+
+## Optional premium deal screener
+
+Use `docs/tools/ownwiseai-deal-screener.md` when the user has access and the screener will change the next action.
+
+Typical triggers:
+
+- many candidate properties need fast triage;
+- the user wants a ranked shortlist;
+- the property is being evaluated for creative finance, rental, BRRRR, house hack, or small multifamily fit;
+- preloaded state data can accelerate first-pass screening;
+- a fresh PropWire export is needed because price, DOM, status, or motivation signals must be current.
+
+Do not require the screener for ordinary one-property verification when manual review is already sufficient.
+
+## Screener input rule
+
+Only use these screener inputs as canonical:
+
+1. `preloaded_state_data`
+2. `fresh_propwire_export`
+
+For fresh exports, treat `propwire.com` as the standard source with:
+
+- target location;
+- `Lead Types: MLS Active`;
+- relevant `Property Types`;
+- `Owner Type: Individual`.
+
+Do not assume a hand-built spreadsheet is equivalent.
 
 ## Verification categories
 
@@ -80,6 +113,26 @@ For each property, verify or flag as unknown:
 - estimated rent range;
 - repair red flags;
 - insurance red flags.
+
+## Screener capture rule
+
+If the screener is used, capture its result separately from verified facts.
+
+Store a compact screening snapshot with:
+
+- source mode;
+- source label or dataset scope;
+- source checked date;
+- primary strategy;
+- secondary strategy;
+- deal status;
+- confidence score;
+- risk band;
+- suggested offer band;
+- seller angle;
+- required manual checks.
+
+The screener may guide prioritization, but it does not verify ownership, title, legality, financing approval, or physical condition.
 
 ## Output format
 
@@ -143,6 +196,7 @@ Do not hide uncertainty. If a source is missing, say what remains unverified.
 Operationally:
 
 - store each material fact as an evidence record or mark it unknown;
+- store screener outputs as screening outputs rather than verified facts;
 - preserve conflicting facts instead of collapsing them;
 - set `stale_after` for dynamic items such as listing status, list price, and rent estimates;
 - create follow-up tasks for title, permit, flood, insurance, or HOA gaps that block a decision.
